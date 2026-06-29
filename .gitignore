@@ -1,0 +1,9 @@
+
+# env & local db
+.env
+*.db
+*.db-journal
+prisma/dev.db*
+
+# RSVP excel exports (dev mode)
+exports/

@@ -1,0 +1,111 @@
+import { PrismaService } from '../prisma/prisma.service';
+import { SaveInvitationDto } from './invitations.dto';
+export declare class InvitationsService {
+    private prisma;
+    constructor(prisma: PrismaService);
+    private derive;
+    private full;
+    private names;
+    private ensureOwner;
+    create(userId: string, dto: SaveInvitationDto): Promise<{
+        id: string;
+        slug: string | null;
+        status: string;
+        templateId: string;
+        themeId: string;
+        motifId: string;
+        theme: any;
+        content: any;
+        ownerEmail: string | null;
+        eventDate: Date | null;
+        expiryDate: Date | null;
+        views: number;
+        publishedAt: Date | null;
+        updatedAt: Date;
+    }>;
+    update(userId: string, id: string, dto: SaveInvitationDto): Promise<{
+        id: string;
+        slug: string | null;
+        status: string;
+        templateId: string;
+        themeId: string;
+        motifId: string;
+        theme: any;
+        content: any;
+        ownerEmail: string | null;
+        eventDate: Date | null;
+        expiryDate: Date | null;
+        views: number;
+        publishedAt: Date | null;
+        updatedAt: Date;
+    }>;
+    listMine(userId: string): Promise<{
+        id: string;
+        slug: string | null;
+        status: string;
+        templateId: string;
+        names: string;
+        eventDate: Date | null;
+        expiryDate: Date | null;
+        views: number;
+        rsvpCount: number;
+        updatedAt: Date;
+    }[]>;
+    getOwned(userId: string, id: string): Promise<{
+        id: string;
+        slug: string | null;
+        status: string;
+        templateId: string;
+        themeId: string;
+        motifId: string;
+        theme: any;
+        content: any;
+        ownerEmail: string | null;
+        eventDate: Date | null;
+        expiryDate: Date | null;
+        views: number;
+        publishedAt: Date | null;
+        updatedAt: Date;
+    }>;
+    publish(userId: string, id: string): Promise<{
+        id: string;
+        slug: string | null;
+        status: string;
+        templateId: string;
+        themeId: string;
+        motifId: string;
+        theme: any;
+        content: any;
+        ownerEmail: string | null;
+        eventDate: Date | null;
+        expiryDate: Date | null;
+        views: number;
+        publishedAt: Date | null;
+        updatedAt: Date;
+    }>;
+    unpublish(userId: string, id: string): Promise<{
+        id: string;
+        slug: string | null;
+        status: string;
+        templateId: string;
+        themeId: string;
+        motifId: string;
+        theme: any;
+        content: any;
+        ownerEmail: string | null;
+        eventDate: Date | null;
+        expiryDate: Date | null;
+        views: number;
+        publishedAt: Date | null;
+        updatedAt: Date;
+    }>;
+    remove(userId: string, id: string): Promise<{
+        ok: boolean;
+    }>;
+    getPublicBySlug(slug: string): Promise<{
+        templateId: string;
+        motifId: string;
+        theme: any;
+        content: any;
+    }>;
+}
